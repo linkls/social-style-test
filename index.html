@@ -245,7 +245,7 @@ function renderQ(){
   var q = DATA.questions[qIdx];
   $('cNow').textContent = qIdx+1;
   $('cBar').style.width = ((qIdx)/40*100 + 2.5) + '%';
-  $('qDim').textContent = '维度 ' + (qIdx%5+1) + ' / 8 · ' + DIMNAME[q.dim];
+  $('qDim').textContent = '维度 ' + (Math.floor(qIdx/5)+1) + ' / 8 · ' + DIMNAME[q.dim];
   $('qText').textContent = q.q;
   var box = $('qOpts'); box.innerHTML='';
   q.opts.forEach(function(o,i){
